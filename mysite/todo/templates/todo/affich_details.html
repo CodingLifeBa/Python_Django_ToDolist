@@ -1,0 +1,21 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+
+<div class="container table-success">
+  <h1>BIENVENU AMANE</h1>
+   <div class="card card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+    <h1>ID:       {{ todo.id }}</h1></br>
+    <h1>Name:     {{todo.name}}</h1></br>
+    <h1>Date:     {{todo.date}}</h1></br>
+    <h1>Completed:{{todo.completed}}
+      </li>
+    </ul>
+    </div>
+    <a class="btn btn-danger" href="{% url 'delete' pk=todo.id %}">Supprimer</a>
+    <a class="btn btn-primary" href="{% url 'update' pk=todo.id%}">Modifer</a>
+    <a class="btn btn-warning" href="{% url 'index' %}">Accueil</a>
+</div>
+{% endblock content %}
